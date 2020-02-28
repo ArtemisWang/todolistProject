@@ -1,0 +1,35 @@
+.app{
+    text-align: center;
+    padding-top: 10rem;
+}
+
+.input{
+    display: block;
+    background-color: burlywood;
+    width: 16rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 0.1rem;
+    padding-bottom: 0.2rem;
+    border-radius: .2rem;
+    height: 2rem;
+}
+
+.input-text{
+    color: cadetblue;
+    border: cornflowerblue solid 1px;
+    display: inline-block;
+    margin-right: .5rem;
+    font-size: 1rem;
+}
+
+.button {
+    background-color: rgb(76, 144, 175);
+    border: none;
+    color: white;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 1rem;
+}

@@ -1,0 +1,10 @@
+.app{
+    text-align: center;
+    padding-top: 10rem;
+}
+
+.input{
+    display: block;
+    background-color: burlywood;
+    width: fit-content;
+}
