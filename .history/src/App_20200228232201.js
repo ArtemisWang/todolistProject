@@ -4,12 +4,11 @@ const App=function(){
     
     const [list, setList]=useState(['todo1','todo2','todo3','todo4'])
     const [content, setContent]=useState('默认')
-    const [done, setDone]=useState(['','','',''])
+    const [done, setDone]=useState(['unline','line-through','unline','unline'])
 
     function addItem(){
         setList([...list,content])
         setContent('默认值')
-        done.push('')
     }
 
     function changeContent(e){
@@ -19,14 +18,14 @@ const App=function(){
 
     function deleteItem(i){
         setList(list.filter((x,index)=>index!==i))
-        setDone(done.filter((x,index)=>index!==i))
     }
 
     function hasDone(i){
-        setList(list.map((x)=>x+''))
+        setList(list)
         let d=done
-        d[i]=d[i]===''?'done':''
+        d[i]=d[i]==='unline'?'line-through':'unline'
         setDone(d)
+        console.log(done)
     }
 
     return (
@@ -37,7 +36,7 @@ const App=function(){
         </div>
         <div className='u-list'>
             <ul className={`todo-list`}>
-                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} onDoubleClick={deleteItem.bind(this,i)} className={done[i]}>{it}</li>))}
+                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} className={done[i]}>{it}</li>))}
             </ul>
         </div>
     </div>)

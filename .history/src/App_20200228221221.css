@@ -36,6 +36,7 @@
     display: inline-block;
     font-size: .8rem;
     border-radius: .5rem;
+    margin-bottom: .1rem;
 }
 
 .todo-list {
@@ -45,11 +46,3 @@
     justify-content: center;
     color: rgb(76, 144, 175);
   }
-
-.done{
-    text-decoration: line-through;
-}
-
-.unline{
-    text-decoration: overline;
-}

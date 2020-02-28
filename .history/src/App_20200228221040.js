@@ -4,12 +4,11 @@ const App=function(){
     
     const [list, setList]=useState(['todo1','todo2','todo3','todo4'])
     const [content, setContent]=useState('默认')
-    const [done, setDone]=useState(['','','',''])
+    const [done, setDone]=useState('')
 
     function addItem(){
         setList([...list,content])
         setContent('默认值')
-        done.push('')
     }
 
     function changeContent(e){
@@ -19,25 +18,17 @@ const App=function(){
 
     function deleteItem(i){
         setList(list.filter((x,index)=>index!==i))
-        setDone(done.filter((x,index)=>index!==i))
-    }
-
-    function hasDone(i){
-        setList(list.map((x)=>x+''))
-        let d=done
-        d[i]=d[i]===''?'done':''
-        setDone(d)
     }
 
     return (
     <div className='app'>
         <div className='input'>
-            <input onChange={changeContent} value={content} className='input-text'/>
+            <input onChange={changeContent} value={content} className='input-text'{`input-text ${done}`}/>
             <button onClick={addItem} className='button'>添加项目</button>
         </div>
         <div className='u-list'>
-            <ul className={`todo-list`}>
-                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} onDoubleClick={deleteItem.bind(this,i)} className={done[i]}>{it}</li>))}
+            <ul className='todo-list'>
+                {list.map((it,i)=>(<li key={it+i} onClick={deleteItem.bind(this,i)}>{it}</li>))}
             </ul>
         </div>
     </div>)

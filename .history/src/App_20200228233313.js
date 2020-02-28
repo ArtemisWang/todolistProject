@@ -19,7 +19,7 @@ const App=function(){
 
     function deleteItem(i){
         setList(list.filter((x,index)=>index!==i))
-        setDone(done.filter((x,index)=>index!==i))
+        setList(done.filter((x,index)=>index!==i))
     }
 
     function hasDone(i){
@@ -27,6 +27,7 @@ const App=function(){
         let d=done
         d[i]=d[i]===''?'done':''
         setDone(d)
+        console.log(done)
     }
 
     return (
@@ -37,7 +38,7 @@ const App=function(){
         </div>
         <div className='u-list'>
             <ul className={`todo-list`}>
-                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} onDoubleClick={deleteItem.bind(this,i)} className={done[i]}>{it}</li>))}
+                {list.map((it,i)=>(<li key={it+i}  onDoubleClick={deleteItem.bind(this,i)} className={done[i]}>{it}</li>))}
             </ul>
         </div>
     </div>)

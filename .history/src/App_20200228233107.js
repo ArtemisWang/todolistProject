@@ -19,7 +19,6 @@ const App=function(){
 
     function deleteItem(i){
         setList(list.filter((x,index)=>index!==i))
-        setDone(done.filter((x,index)=>index!==i))
     }
 
     function hasDone(i){
@@ -27,6 +26,7 @@ const App=function(){
         let d=done
         d[i]=d[i]===''?'done':''
         setDone(d)
+        console.log(done)
     }
 
     return (

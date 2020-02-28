@@ -9,7 +9,6 @@ const App=function(){
     function addItem(){
         setList([...list,content])
         setContent('默认值')
-        done.push('')
     }
 
     function changeContent(e){
@@ -19,14 +18,12 @@ const App=function(){
 
     function deleteItem(i){
         setList(list.filter((x,index)=>index!==i))
-        setDone(done.filter((x,index)=>index!==i))
     }
 
     function hasDone(i){
-        setList(list.map((x)=>x+''))
-        let d=done
-        d[i]=d[i]===''?'done':''
-        setDone(d)
+        done[i]=(done[i]===''?'done':'')
+        console.log(done)
+        setDone(done)
     }
 
     return (
@@ -36,8 +33,8 @@ const App=function(){
             <button onClick={addItem} className='button'>添加项目</button>
         </div>
         <div className='u-list'>
-            <ul className={`todo-list`}>
-                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} onDoubleClick={deleteItem.bind(this,i)} className={done[i]}>{it}</li>))}
+            <ul className='todo-list'>
+                {list.map((it,i)=>(<li key={it+i} onClick={hasDone.bind(this,i)} className={done[i]}>{it}</li>))}
             </ul>
         </div>
     </div>)
