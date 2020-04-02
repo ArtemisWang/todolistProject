@@ -1,5 +1,5 @@
 .app{
-    text-align: center;
+    /* text-align: center; */
     padding-top: 10rem;
 }
 
@@ -23,6 +23,7 @@
     font-size: 1rem;
     margin-top: .4rem;
     border-radius: .5rem;
+    padding: .1rem;
 }
 
 .button {
@@ -35,4 +36,20 @@
     display: inline-block;
     font-size: .8rem;
     border-radius: .5rem;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(76, 144, 175);
+  }
+
+.done{
+    text-decoration: line-through;
+}
+
+.unline{
+    text-decoration: overline;
 }
